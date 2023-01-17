@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%block content%}
+
+<h2>-Posts-</h2>
+{% for post in post_list %}
+
+<div class="post-listview">
+    <h3 class="post-display-title"> <a href="{% url 'post_detail' post.pk %}">{{post.title}}</a></h3>
+
+</div>
+
+
+{%endfor%}
+
+{%endblock content%}

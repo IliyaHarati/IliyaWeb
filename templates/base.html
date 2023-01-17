@@ -1,0 +1,37 @@
+{%load static%}
+
+<head>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/post_detail.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header-layout.css' %}">
+    <link rel="stylesheet" href="{% static 'css/header-appearance.css' %}">
+
+
+</head>
+
+
+<header>
+    <div class="header-left">
+        <h1 class="Logo"><a href="{% url 'home' %}">IliyaNet</a> </h1>
+        {%if user.is_authenticated %}
+        <h1 class="Login-Status"> Welcome Back, {{user.username}}! <a href="{% url 'logout' %}">Log out</a> </h1>
+        {%else%}
+        <h1 class="Login-Status"> You are not logged in | <a href="{% url 'login' %}">Login </a><a
+                href="{% url 'signup' %}">|
+                Sign Up |</a> </h1>
+        {%endif %}
+    </div>
+    <div class="header-right">
+        <h1 class="New-Post-Button"><a href="{% url 'post_create' %}">+New Post</a> </h1>
+    </div>
+
+
+</header>
+
+
+
+{%block content%}
+{%endblock content%}

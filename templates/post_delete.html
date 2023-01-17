@@ -1,0 +1,11 @@
+{%extends 'base.html' %}
+{%block content%}
+<form action="" method="post">
+    {% csrf_token %}
+    <h2> Are you sure you want to delete {{post.title}}? </h2>
+    <button type="submit">Confirm</button>
+    </button>
+</form>
+
+
+{%endblock content%}
